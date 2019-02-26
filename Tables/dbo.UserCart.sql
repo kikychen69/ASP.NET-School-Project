@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[UserCart]
+(
+[UserID] [int] NOT NULL IDENTITY(1, 1),
+[BookID] [int] NOT NULL,
+[Quantity] [int] NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[UserCart] ADD CONSTRAINT [PK__UserCart__1788CCAC05F1E2C8] PRIMARY KEY CLUSTERED  ([UserID]) ON [PRIMARY]
+GO
