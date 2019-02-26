@@ -1,0 +1,239 @@
+﻿
+
+@media only screen and (max-width: 992px) {
+    .side {
+        display: none;
+    }
+
+    .navbar > li > a .searchdd {
+        display: inline-flex;
+    }
+}
+
+.side {
+    max-width: 260px;
+}
+
+.cats {
+    margin-top: 10px;
+    padding: 0;
+}
+
+    .cats > ul > li {
+        padding: 0;
+        list-style-type: none;
+        width: 200px;
+        height: 30px;
+    }
+
+        .cats > ul > li > a {
+            text-decoration: none;
+        }
+
+        .cats > ul > li:hover {
+            background-color: #eee;
+        }
+
+.searcharea {
+    width: 230px;
+    margin: 25px 0px;
+    padding: 30px 10px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px dashed #ddd;
+}
+
+.searchbody > p > span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.maincontent {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.carousel-indicators > li {
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+}
+
+.linetitle {
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+    position: relative;
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+    .linetitle span {
+        background: #fff;
+        padding: 0 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .linetitle:before {
+        background: #333;
+        content: "";
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+
+    .linetitle:before {
+        left: 0;
+    }
+
+.productlist {
+    width: 90%;
+    text-align: center;
+}
+
+.spacer {
+    border-top: 2px #333 solid;
+    height: 50px;
+}
+
+.product-wrapper {
+    border-radius: 20px;
+    background-color: #fff;
+    min-height: 300px;
+}
+
+.detailsimage:hover {
+
+}
+
+.middle {
+    transition: .5s ease;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    text-align: center;
+    line-height: 1;
+    opacity: 0;
+}
+
+.middletext {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.imagewrapper:hover img {
+    opacity: 0.5;
+}
+
+.imagewrapper:hover .middle {
+    opacity: 1;
+}
+.book-title {
+    height: 80px;
+}
+
+.book-title>a {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    color:#000;
+}
+
+.book-title:hover>a {
+    text-decoration: none;
+    color: #000;
+}
+
+.book-author {
+    color: cornflowerblue;
+}
+
+.lblstock {
+    font-size: 0.8rem;
+    color: red;
+}
+
+.True > span {
+    text-decoration: line-through;
+    color: darkorange;
+}
+
+.True{
+    text-decoration: none;
+    color: red;
+}
+
+.False{
+    color:darkorange;
+}
+
+.False > span{
+    display:none;
+}
+
+.popup {
+    color: blue;
+    background-color:red;
+}
+
+.modalPopup{
+    background-color: blue;
+}
+
+.pagingbutton {
+    border: 1px #eee solid;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.currentpg {
+    border: 1px white solid;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.pagingbutton:hover {
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.pagingbutton a {
+    text-decoration: none;
+}
+
+.dp {
+    width: 90%;
+    text-align:right;
+}
+
+.footer{
+    height:200px;
+    width:100%;
+}
+
+.blu{
+    background-color: blue;
+}
+
+a[name=bestsellers]{
+    padding-top: 110px;
+    margin-top: -110px;
+    display: inline-block;
+}
+
+a[name=all] {
+    padding-top: 110px;
+    margin-top: -110px;
+    display: inline-block;
+}
+
+.sortdd{
+    border-color:#eee;
+}
