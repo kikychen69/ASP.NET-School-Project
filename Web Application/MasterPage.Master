@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Team7.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>T7 BookStore</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="JavaScript.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>    <form id="form1" method="post" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <nav class="first navbar fixed-top navbar-expand-md navbar-light pb-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="Default.aspx">&nbsp T7<span>BOOKSTORE</span></a>
+            <div class="d-flex flex-row order-2 order-lg-3 ml-auto">
+                <ul class="navbar-nav flex-row">
+                     <li class="nav-item"><a class="nav-link" href="#"><asp:LoginView ID="LoginView1" runat="server">    
+                    <LoggedInTemplate>
+                        <li class="nav-item"><a href="#" class="nav-link"><img src="Images/accounticon.svg" />&nbsp <asp:LoginName ID="LoginName1" runat="Server" /></a></li>
+                    </LoggedInTemplate></asp:LoginView></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i></a></li>
+                    <li class="nav-item"><asp:LoginStatus ID="LoginStatus1" CssClass="nav-link" runat="server" LoginText="LOGIN/ SIGN UP" />
+                    </li>
+                    <asp:UpdatePanel ID="UpdateCartPanel" runat="server"><ContentTemplate>
+                    <li class="nav-item"><a class="nav-link px-2" href="Shopping.aspx"><i class="fas fa-shopping-cart"></i> CART 
+                      <asp:Label ID="LabelCount" CssClass="btn-danger px-2 py-1" runat="server" Text="Label"></asp:Label> </a></li></ContentTemplate></asp:UpdatePanel>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="second navbar navbar-expand-md navbar-light py-0">
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item px-2">
+                <a class="nav-link" href="Default.aspx#all">ALL BOOKS<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="Default.aspx#bestsellers">BESTSELLERS</a>
+              </li>
+              <li class="nav-item dropdown px-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  CATEGORIES
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <asp:Button ID="MenuChildren" Cssclass="dropdown-item" runat="server" Text="CHILDREN" OnClick="MenuChildren_Click" />
+                    <asp:Button ID="MenuNonFiction" Cssclass="dropdown-item" runat="server" Text="NON-FICTION" OnClick="MenuNonFiction_Click" />
+                    <asp:Button ID="MenuFinance" Cssclass="dropdown-item" runat="server" Text="FINANCE" OnClick="MenuFinance_Click" />
+                    <asp:Button ID="MenuTechnical" Cssclass="dropdown-item" runat="server" Text="TECHNICAL" OnClick="MenuTechnical_Click" />
+                </div>
+              </li>
+               <li id="menuAdmin" runat="server" class="nav-item dropdown px-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAdmin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ADMIN
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="AdminLogin.aspx">UPDATE/DELETE BOOKS</a>
+                    <a class="dropdown-item" href="AdminAdd.aspx">ADD NEW BOOKS</a>
+                    <a class="dropdown-item" href="AdminSale.aspx">DECLARE SALE</a>               </div>
+              </li>
+
+            </ul>
+
+            <div class="form-inline my-0 py-1">
+                <asp:Panel runat="server" DefaultButton="ButtonSearch">
+                <asp:TextBox ID="TextBoxSearch" Cssclass="form-control mr-sm-2" placeholder="Find: Title/Author/ISBN" runat="server"></asp:TextBox>
+                <asp:Button ID="ButtonSearch" Cssclass="searchbtn btn btn-outline-success p-2" OnClick="SearchButton_Click" runat="server" Text="Search" />
+            </asp:Panel>
+            </div>
+            </div>
+        </nav>
+
+        <div class="main d-flex flex-row my-flex-container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+
+</body>
+</html>
