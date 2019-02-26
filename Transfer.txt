@@ -1,0 +1,27 @@
+protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int bookId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+            LabelX.Text = bookId.ToString();
+            LabelY.Text = BusinessLogic.GetBookByID(bookId).Title;
+
+            List<CartItem> sessioncart = (List<CartItem>)Session["cartItems"];
+            sessioncart.RemoveAll(x => x.BookID == bookId);
+            Session["cartItems"] = sessioncart;
+
+            List<CartItemDetail> cartdetail = new List<CartItemDetail>();
+            foreach (CartItem c in sessioncart)
+            {
+                CartItemDetail cid = new CartItemDetail();
+                Book b = BusinessLogic.GetBookByID(c.BookID);
+                cid.BookID = c.BookID;
+                cid.Title = b.Title;
+                cid.Author = b.Author;
+                cid.ISBN = b.ISBN;
+                cid.Quantity = c.Quantity;
+                cid.Price = (1 - (decimal)b.DiscountPercent) * (decimal)b.Price;
+                cid.Stock = b.Stock;
+                cartdetail.Add(cid);
+            }
+
+            GridView1.DataSource = cartdetail;
+            GridView1.DataBind();

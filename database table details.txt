@@ -1,0 +1,59 @@
+USE master;
+IF EXISTS(SELECT name FROM sys.databases WHERE name = 'Bookshop')
+BEGIN
+    ALTER DATABASE Bookshop SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE Bookshop;
+END
+GO 
+CREATE DATABASE Bookshop;
+GO
+USE Bookshop;
+ 
+CREATE TABLE Book (
+        BookID int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+        Title varchar(120) NOT NULL,
+        CategoryID int NOT NULL,
+        ISBN varchar(22) NOT NULL,
+        Author varchar(64) NOT NULL,
+        Stock int NOT NULL,
+        Price decimal(18, 2) NOT NULL,
+		DiscountPercent real NOT NULL,
+		IsDiscount BIT NOT NULL
+);
+
+CREATE TABLE Category (
+        CategoryID int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+        Name varchar(16) NOT NULL
+);
+
+CREATE TABLE UserTable (
+        UserID int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+        FirstName varchar(64) NOT NULL,
+		LastName varchar(64) NOT NULL,
+        PhoneNo varchar(22) NOT NULL,
+        PostalCode varchar(22) NOT NULL,
+        Address varchar(120) NOT NULL,
+		Email varchar(120) NOT NULL
+);
+
+CREATE TABLE UserCart (
+        UserID int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+        BookID int NOT NULL,
+		Quantity int NOT NULL
+);
+
+CREATE TABLE Orders (
+        OrderID int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+        UserID int NOT NULL,
+		BookID int NOT NULL,
+		Quantity int NOT NULL,
+		Date DATETIME NOT NULL
+);
+
+CREATE TABLE OrderDetails (
+        OrderID int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		BookID int NOT NULL,
+		Quantity int NOT NULL,
+		Price decimal(18, 2) NOT NULL,
+		Date DATETIME NOT NULL
+);
