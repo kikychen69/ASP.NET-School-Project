@@ -1,0 +1,60 @@
+﻿body {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: 100%;
+}
+
+.first{
+}
+
+.navbar {
+    background-color: antiquewhite;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+    .navbar-brand > span {
+        font-weight: 400;
+        color: red;
+    }
+
+    .searchbody{
+        z-index:3;
+    }
+
+.searchbtn {
+    border-radius: 10px;
+}
+
+.first .nav-item {
+    font-size: 1rem;
+}
+
+.second {
+    margin-top: 59px;
+    position: fixed;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.dropdown > .dropdown-menu, .dropdown > .dropdown-menu > .dropdown-item {
+    background-color: antiquewhite;
+}
+
+.dropdown-menu > .dropdown-item:hover {
+    background-color: #fdf9f3;
+}
+
+.main {
+    margin: 0;
+    width: 100%;
+    padding-top: 107px;
+    font-size: 1rem;
+}
+
